@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+mainClassName = "Main"
+
+jar {
+    from configurations.runtime
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
